@@ -1,0 +1,32 @@
+let str = 'BBBBBBBBBBbbbbbbbbbbuuuuuuuuuullllllllllssssssssssaaaaaaaaaarrrrrrrrrr'
+let strArr = str.split('')
+let obj = {};
+let obj1 = { B: 1, u: 2, l: 1, b: 1, a: 2, s: 1, r: 1 }
+strArr.forEach((item, i) => {
+    Object.keys(obj1).forEach(key => {
+        if(item == key) {
+            if(!obj[item])
+                obj[item] = (obj[item] || 0) + 1
+            else {
+                obj[item] += 1
+            }
+        }
+
+    })
+})
+
+let objLen = Object.keys(obj).length;
+let obj1Len = Object.keys(obj1).length;
+if(objLen != obj1Len) {
+    console.log(0);
+}
+else {
+    let arr = []
+    Object.keys(obj).forEach(k => {
+        Object.keys(obj1).forEach(k1 => {
+            if(k == k1) {
+                arr.push(Math.floor(obj[k]/obj1[k1]))
+            }
+        })
+    })
+}

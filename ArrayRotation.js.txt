@@ -1,0 +1,20 @@
+const arr = [1,2,3,4,5,6]
+
+const rotateArray = (arr, d) => {
+    for (let i = 0; i< d; i++) {
+        arrayRotFunc(arr, arr.length)
+    }
+}
+
+const arrayRotFunc = (arr, len) => {
+    let temp = arr[0]
+        , i;
+        for(i = 0; i<len-1; i++) {
+            arr[i] = arr[i+1]
+        }
+        arr[i] = temp;
+        console.log(arr)
+}
+
+// arrayRotFunc(arr, arr.length)
+rotateArray(arr, 2)
